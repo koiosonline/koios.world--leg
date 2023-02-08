@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:app": "nx serve app-portal"
+    "start:app-portal": "nx serve app-portal",
+    "start:storybook": "nx run app-portal:storybook"
   },
   "private": true,
   "dependencies": {
