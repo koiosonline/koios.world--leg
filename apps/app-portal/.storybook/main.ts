@@ -1,5 +1,4 @@
 import { rootMain } from '../../../.storybook/main';
-
 import type { StorybookConfig, Options } from '@storybook/core-common';
 import path from 'path';
 
@@ -14,7 +13,6 @@ const config: StorybookConfig = {
   addons: [
     ...(rootMain.addons || []),
     '@nrwl/react/plugins/storybook',
-
     'storybook-addon-swc',
     {
       name: 'storybook-addon-next',
@@ -28,8 +26,6 @@ const config: StorybookConfig = {
     if (rootMain.webpackFinal) {
       config = await rootMain.webpackFinal(config, { configType } as Options);
     }
-
-    // add your own webpack tweaks if needed
 
     return config;
   },
