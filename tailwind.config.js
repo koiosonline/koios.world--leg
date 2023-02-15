@@ -9,14 +9,14 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          light: '#084367',
-          DEFAULT: '#1a2e3b',
-        },
-        secondary: {
-          light: '#cae9ff',
-          DEFAULT: '#4bc9ff',
-          dark: '#0faef1',
-        },
+          light: '#704DD3',
+          DEFAULT: '#1C0F56'
+      },
+      secondary: {
+          light: '#E6C2CF',
+          DEFAULT: '#EF7BA5',
+          dark: '#F13E7F'
+      },
         error: {
           light: '#e57373',
           DEFAULT: '#f44336',
