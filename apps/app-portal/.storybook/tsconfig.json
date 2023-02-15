@@ -23,5 +23,5 @@
     "../**/*.stories.mdx",
     "*.ts",
     "*.js"
-  ]
+, "preview.tsx"  ]
 }
