@@ -26,6 +26,7 @@
     "@nrwl/node": "15.6.2",
     "@nrwl/react": "15.6.2",
     "@nrwl/workspace": "15.6.2",
+    "@nx-extend/strapi": "^3.4.0",
     "@testing-library/react": "13.4.0",
     "@types/express": "4.17.13",
     "@types/jest": "28.1.1",
