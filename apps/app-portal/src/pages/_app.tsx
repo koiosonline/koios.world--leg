@@ -1,6 +1,7 @@
 import { AppProps } from 'next/app';
 import Head from 'next/head';
 import '../assets/styles/globals.css';
+import { Layout } from '../components/Layout/Layout';
 
 function CustomApp({ Component, pageProps }: AppProps) {
   return (
@@ -8,9 +9,11 @@ function CustomApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>Welcome to app-portal! </title>
       </Head>
-      <main className="app">
+
+      
+      <Layout>
         <Component {...pageProps} />
-      </main>
+      </Layout>
     </>
   );
 }
