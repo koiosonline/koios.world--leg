@@ -14,7 +14,7 @@ export const Layout = ({ children }: LayoutType) => {
     <>
       <Header isUnfolded={isUnfolded} toggleDrawer={toggleDrawer}  />
       <Drawer isUnfolded={isUnfolded} />
-      <main className={`flex flex-col grow mt-12 ease-in-out duration-1000 ${isUnfolded ? 'ml-72  w-[calc(100%-theme(space.72))]' : ''}`}>{children}</main>
+      <main className={`flex flex-col grow p-4 mt-12 ease-in-out duration-300 ${isUnfolded ? 'ml-72  w-[calc(100%-theme(space.72))]' : ''}`}>{children}</main>
     </>
   );
 };

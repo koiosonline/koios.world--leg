@@ -1,6 +1,6 @@
 import React, { lazy, Suspense } from 'react';
 
-export const IconNames = ['close', 'hamburger', 'menu-fold', 'menu-unfold', 'moon', 'sun'] as const;
+export const IconNames = ['close', 'gear', 'hamburger', 'magnifying-glass', 'menu-fold', 'menu-unfold', 'moon', 'sun'] as const;
 
 interface IconProps {
   name: (typeof IconNames)[number];
@@ -14,9 +14,11 @@ const IconComponent = ({ name, className }: IconProps) => {
     return null;
   }
 
-  const Icon = lazy(() => import(`./icons/${name}`).then(module => ({
-    default: () => React.cloneElement(module.default(), { className: `${iconClass}` })
-  })));
+  const Icon = lazy(() =>
+    import(`./icons/${name}`).then((module) => ({
+      default: () => React.cloneElement(module.default(), { className: `${iconClass}` })
+    }))
+  );
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
