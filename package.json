@@ -16,7 +16,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "tslib": "^2.5.0",
-    "wagmi": "^0.11.6"
+    "wagmi": "^0.11.7"
   },
   "devDependencies": {
     "@babel/core": "7.20.12",
