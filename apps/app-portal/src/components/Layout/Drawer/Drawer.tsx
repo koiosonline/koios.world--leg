@@ -1,55 +1,53 @@
 import { Icon } from '@koios-world/shared-ui';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
+import { SearchBar } from '../../Search/SearchBar';
+import { drawerNavigation } from './static/drawerNavigation';
 
 type DrawerType = {
   isUnfolded?: boolean;
-};
-
-const navItems = {
-  noCategory: [
-    {
-      name: 'Dashboard',
-      href: '/'
-    },
-    {
-      name: 'My profile',
-      href: '/my-profile'
-    }
-  ],
-  Learn: [
-    {
-      name: 'Courses',
-      href: '/courses'
-    },
-    {
-      name: 'Join community',
-      href: '/join-community'
-    }
-  ]
+  isMobile?: boolean;
 };
 
 export const Drawer = (props: DrawerType) => {
-  const { isUnfolded } = props;
+  const { isUnfolded, isMobile } = props;
+  const router = useRouter();
+
+  const isActive = (href: string) => router.pathname === href;
+  const handleSearch = async (searchTerm: string) => router.push(searchTerm);
 
   return (
     <nav
-      className={`bg-white flex flex-col min-h-screen w-72 fixed ease-in-out duration-300 ${
+      className={`fixed z-40 flex min-h-screen w-72 flex-col bg-white duration-300 ease-in-out ${isMobile ? 'pt-20' : 'pt-0'} ${
         isUnfolded ? 'translate-x-0' : '-translate-x-full'
       }`}
     >
-      <Link href="/" className="w-fit mx-auto mt-16 mb-16 container">
-        <Image src="assets/images/logo/koios-logo.svg" alt="Koios Logo" width={150} height={100} />
-      </Link>
+      {!isMobile && (
+        <Link href="/" className="container mx-auto mt-16 mb-10 w-fit">
+          <Image src="assets/images/logo/koios-logo.svg" alt="Koios Logo" width={150} height={100} />
+        </Link>
+      )}
 
-      <div className='container'>
-        {Object.keys(navItems).map((category) => (
-          <div key={category}>
-            <h3 className="text-sm font-semibold text-gray-500 uppercase tracking-wide">{category}</h3>
-            <ul className="mt-3 space-y-1">
-              {navItems[category].map((item) => (
+      {isMobile && <SearchBar onSearch={handleSearch} placeholder="Search on public key..." />}
+
+      <div className="container">
+        {Object.keys(drawerNavigation).map((category) => (
+          <div key={category} className="mt-8 text-gray-400">
+            {category !== 'NoCategory' && <h3 className="mb-2 text-xs">{category}</h3>}
+
+            <ul>
+              {drawerNavigation[category].map((item) => (
                 <li key={item.name}>
-                  <Link href={item.href}>{item.name}</Link>
+                  <Link
+                    href={item.href}
+                    className={`flex items-center gap-4 rounded p-3 text-sm font-semibold duration-150 ease-in-out ${
+                      isActive(item.href) ? 'bg-pink-50 text-primary-dark' : ''
+                    } hover:bg-pink-50 hover:text-primary-dark`}
+                  >
+                    <Icon name={item.icon} />
+                    {item.name}
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -57,8 +55,8 @@ export const Drawer = (props: DrawerType) => {
         ))}
       </div>
 
-      <div className="mt-auto container py-6 border-t-2 border-slate-200">
-        <Link href="/settings" className="flex mx-auto  w-fit items-center gap-2">
+      <div className="container mt-auto border-t-2 border-slate-200 py-6">
+        <Link href="/settings" className="mx-auto flex  w-fit items-center gap-2">
           <Icon name="gear" />
           Settings
         </Link>

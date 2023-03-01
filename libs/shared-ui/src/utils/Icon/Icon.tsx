@@ -1,6 +1,22 @@
 import React, { lazy, Suspense } from 'react';
 
-export const IconNames = ['close', 'gear', 'hamburger', 'magnifying-glass', 'menu-fold', 'menu-unfold', 'moon', 'sun'] as const;
+export const IconNames = [
+  'award',
+  'chart-simple',
+  'close',
+  'earth',
+  'gear',
+  'hamburger',
+  'layer-group',
+  'magnifying-glass',
+  'menu-fold',
+  'menu-unfold',
+  'moon',
+  'sun',
+  'trophy',
+  'user',
+  'users'
+] as const;
 
 interface IconProps {
   name: (typeof IconNames)[number];
