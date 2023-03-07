@@ -61,6 +61,7 @@
     "@nrwl/esbuild": "15.6.2",
     "@nrwl/express": "^15.6.2",
     "@nrwl/node": "15.6.2",
+    "@nx-extend/strapi": "^3.4.0",
     "@types/express": "4.17.13",
     "esbuild": "^0.15.7",
     "express": "^4.18.1",
