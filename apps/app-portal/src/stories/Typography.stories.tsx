@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { TypographyEnum, useSize } from '@koios-world/shared-ui';
+import { TypographyEnum, useBrowserDimensions } from '@koios-world/shared-ui';
 
 type TypographyExampleProps = {
   element: React.ElementType;
@@ -69,7 +69,7 @@ export const Default = () => {
 const TypographyExample = (props: TypographyExampleProps) => {
   const { element, component, sampleText } = props;
   const textRef = useRef<HTMLSpanElement>(null);
-  const { width } = useSize();
+  const { width } = useBrowserDimensions();
   const [fontLine, setFontLine] = useState('');
   const Element = element;
   const customTag = component ? component : Element;

@@ -19,4 +19,8 @@
   #__next {
     @apply flex flex-col min-h-full;
   }
+
+  input:focus {
+    @apply outline-none;
+}
 }

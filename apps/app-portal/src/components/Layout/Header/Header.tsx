@@ -23,7 +23,7 @@ export const Header = (props: HeaderType) => {
       ${isUnfolded && !isMobile ? 'ml-72 w-[calc(100%-theme(space.72))]' : 'w-full'}`}
     >
       <div className="flex justify-between items-center px-4 gap-4">
-        <div className={`flex ${isMobile ? 'gap-3' : 'gap-6'}`}>
+        <div className={`flex gap-3`}>
           <div className="block bg-slate-100 p-2 rounded" onClick={toggleDrawer}>
             <Icon name={isUnfolded ? 'menu-fold' : 'menu-unfold'} />
           </div>

@@ -1,6 +1,6 @@
 import { IconNames } from "@koios-world/shared-ui";
 
-type DrawerNavigationItemType = {
+export type DrawerNavigationItemType = {
   name: string;
   href: string;
   icon: (typeof IconNames)[number];

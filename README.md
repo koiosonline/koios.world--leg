@@ -5,7 +5,7 @@ This workspace is a monorepo for the Koios project and created with [NX](https:/
 
 ## Development server
 
-Run `npm run start:app` for starting the app-portal. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+Run `npm run start:app-portal` for starting the app-portal. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
 
 ## Understand this workspace
 
