@@ -8,7 +8,7 @@
     "description": ""
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {
     "i18n": {
@@ -49,11 +49,10 @@
         }
       }
     },
-    "chapters": {
+    "books": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::chapter.chapter",
-      "mappedBy": "world"
+      "target": "api::book.book"
     }
   }
 }

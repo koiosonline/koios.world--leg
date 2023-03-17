@@ -4,10 +4,11 @@
   "info": {
     "singularName": "chapter",
     "pluralName": "chapters",
-    "displayName": "Chapter"
+    "displayName": "Chapter",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {
     "i18n": {
@@ -52,17 +53,24 @@
       "type": "date",
       "required": true
     },
-    "world": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::world.world",
-      "inversedBy": "chapters"
-    },
     "subchapters": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::subchapter.subchapter",
       "mappedBy": "chapter"
+    },
+    "book": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::book.book"
+    },
+    "content": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "richtext"
     }
   }
 }
