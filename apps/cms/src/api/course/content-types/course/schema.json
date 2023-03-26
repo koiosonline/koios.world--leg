@@ -1,11 +1,10 @@
 {
   "kind": "collectionType",
-  "collectionName": "worlds",
+  "collectionName": "courses",
   "info": {
-    "singularName": "world",
-    "pluralName": "worlds",
-    "displayName": "World",
-    "description": ""
+    "singularName": "course",
+    "pluralName": "courses",
+    "displayName": "Course"
   },
   "options": {
     "draftAndPublish": true
@@ -16,43 +15,46 @@
     }
   },
   "attributes": {
-    "name": {
+    "Title": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
       "type": "string",
-      "required": true,
-      "unique": true
+      "required": true
     },
-    "description": {
+    "Description": {
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       },
-      "type": "richtext",
+      "type": "text",
       "required": true
     },
-    "cover": {
+    "Cover": {
+      "allowedTypes": [
+        "images"
+      ],
       "type": "media",
       "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images",
-        "videos"
-      ],
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
-      }
+      },
+      "required": true
     },
-    "courses": {
+    "world": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::world.world"
+    },
+    "chapters": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::course.course"
+      "target": "api::chapter.chapter"
     }
   }
 }
