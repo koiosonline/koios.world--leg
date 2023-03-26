@@ -59,11 +59,6 @@
       "target": "api::subchapter.subchapter",
       "mappedBy": "chapter"
     },
-    "book": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::book.book"
-    },
     "content": {
       "pluginOptions": {
         "i18n": {
@@ -71,6 +66,11 @@
         }
       },
       "type": "richtext"
+    },
+    "course": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::course.course"
     }
   }
 }
